@@ -1,0 +1,16 @@
+.page {
+  position: relative;
+
+  &-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.appPagination {
+  display: flex;
+  justify-content: center;
+  background-color: wheat;
+  padding: 16px;
+}

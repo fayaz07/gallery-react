@@ -1,0 +1,24 @@
+.album {
+  flex: 2;
+
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+
+  &-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &-date {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  &-pages {
+    margin-top: 0px;
+    margin-bottom: 8px;
+  }
+}

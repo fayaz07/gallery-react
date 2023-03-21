@@ -1,0 +1,34 @@
+.vimg {
+  flex: 3;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+
+  &-dl-opts {
+    display: flex;
+    flex-direction: row;
+
+    &-button {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &-dlImg {
+    height: 32px;
+    width: 32px;
+  }
+
+  &-title {
+    width: fit-content;
+    margin-top: 8px;
+    text-align: start;
+    margin-right: 16px;
+  }
+}
