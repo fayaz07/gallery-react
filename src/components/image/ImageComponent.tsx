@@ -9,27 +9,27 @@ import Endpoints from "../../services/api/Endpoints";
 
 const url = Endpoints.baseUrl;
 
-function ImageComponent(props: { image: ImageModel }) {
-  const { image } = props;
+function ImageComponent(props: { image: ImageModel; albumId: string }) {
+  const { image, albumId } = props;
 
   const downloadOriginalImage = () => {
-    saveAs(`${url}dl/${image.orig}`, image.orig);
+    saveAs(`${url}dl/${albumId}/${image.orig}`, image.orig);
   };
   const downloadLargeImage = () => {
-    saveAs(`${url}dl/${image.lg}`, image.lg);
+    saveAs(`${url}dl/${albumId}/${image.lg}`, image.lg);
   };
 
   const downloadMediumImage = () => {
-    saveAs(`${url}dl/${image.md}`, image.md);
+    saveAs(`${url}dl/${albumId}/${image.md}`, image.md);
   };
 
   const downloadSmallImage = () => {
-    saveAs(`${url}dl/${image.sm}`, image.sm);
+    saveAs(`${url}dl/${albumId}/${image.sm}`, image.sm);
   };
 
   return (
     <div key={image.th} className="vimg">
-      <Image src={`${url}thumbnail/${image.th}`} fluid />
+      <Image src={`${url}${albumId}/thumbnail/${image.th}`} fluid />
       <div className="info">
         <h4 className="info-title">Download options</h4>
         <img src={download} className="info-dlImg" />

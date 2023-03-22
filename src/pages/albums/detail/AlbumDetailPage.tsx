@@ -8,13 +8,14 @@ import { getPageOfAlbum } from "../../../services/api/Albums";
 import { toast } from "react-toastify";
 
 function AlbumDetail(
+  albumId: string,
   albumPage: AlbumPage,
   currentPage: number,
   pages: number,
   onPageChange: (arg0: number) => void
 ) {
   const list = albumPage.data.map((e, i) => {
-    return <ImageComponent key={`${i}-image`} image={e} />;
+    return <ImageComponent key={`${i}-image`} image={e} albumId={albumId} />;
   });
   return (
     <div className="page">
@@ -63,7 +64,13 @@ function AlbumDetailPage() {
   if (loading) {
     return LoaderComponent();
   } else {
-    return AlbumDetail(pageData, page, pageData.totalPages, onPageChange);
+    return AlbumDetail(
+      id || "",
+      pageData,
+      page,
+      pageData.totalPages,
+      onPageChange
+    );
   }
 }
 
